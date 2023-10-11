@@ -18,7 +18,14 @@ Se defina una única variablela cual será igual a cero. Seguido a esto, en un c
 
 * Diagrama de flujo:
 
-...
+```mermaid
+flowchart TB;
+    A(Inicio) --> B["i = 1"] --> C{i <= 100} --> D["Sí"]
+    C --> E["No"]
+    D --> F["n = i**2"] --> G["print i, n"] --> H["i += 1"]
+    H --> C
+    E --> I(Fin)
+```
 
 ### Punto 2
 
@@ -39,7 +46,13 @@ while i < 1000 and j < 999:
 
 * Diagrama de flujo:
 
-...
+```mermaid
+flowchart TD;
+    A(Inicio) --> B["i = 2 and j = 1"] --> C{"i <= 1000 and j <= 999"} --> D["Sí"]
+    C --> E["No"]
+    D --> F["print i, j"] --> G["i += 2"] --> H["j += 2"] --> C
+    E --> I(Fin)
+````
 
 ### Punto 3
 
@@ -64,7 +77,16 @@ Se define una variable que será para que el usuario ingrese un valor numérico 
 
 * Diagrama de flujo:
 
-...
+```mermaid
+flowchart TD;
+    A(Inicio) --> B["n = int"] --> C{"n > 2?"} --> D["Sí"]
+    C --> L["No"] --> M(Fin)
+    D --> E{"n % 2 == 0?"} --> F["Sí"] --> G["n -= 2"]
+    E --> H["No"]
+    G --> I["print n"]
+    I --> C
+    H --> J["n -= 1"] --> K["print n"] --> C
+```
 
 ### Punto 4
 
